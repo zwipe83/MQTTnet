@@ -6,9 +6,9 @@
 // ReSharper disable UnusedMember.Global
 // ReSharper disable InconsistentNaming
 
-using System.Text.Json;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
+using System.Text.Json;
 
 namespace MQTTnet.Samples.Server;
 

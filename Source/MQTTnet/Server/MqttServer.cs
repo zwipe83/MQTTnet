@@ -2,6 +2,12 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Adapter;
+using MQTTnet.Diagnostics;
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+using MQTTnet.Server.Disconnecting;
 using System;
 using System.Collections;
 using System.Collections.Concurrent;
@@ -9,12 +15,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using MQTTnet.Adapter;
-using MQTTnet.Diagnostics;
-using MQTTnet.Internal;
-using MQTTnet.Packets;
-using MQTTnet.Protocol;
-using MQTTnet.Server.Disconnecting;
 
 namespace MQTTnet.Server
 {
@@ -290,7 +290,7 @@ namespace MQTTnet.Server
             ThrowIfStarted();
 
             _isStopping = false;
-            
+
             _cancellationTokenSource = new CancellationTokenSource();
             var cancellationToken = _cancellationTokenSource.Token;
 

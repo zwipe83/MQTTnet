@@ -15,12 +15,12 @@ namespace MQTTnet.Benchmarks
         {
             TestEnvironment.EnableLogger = false;
         }
-        
+
         [GlobalCleanup]
         public void GlobalCleanup()
         {
         }
-        
+
         [Benchmark]
         public void Handle_100_000_Messages_In_Receiving_Client()
         {

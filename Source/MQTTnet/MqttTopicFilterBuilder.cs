@@ -3,8 +3,8 @@
 // See the LICENSE file in the project root for more information.
 
 using MQTTnet.Exceptions;
-using MQTTnet.Protocol;
 using MQTTnet.Packets;
+using MQTTnet.Protocol;
 
 namespace MQTTnet
 {
@@ -59,19 +59,19 @@ namespace MQTTnet
             _qualityOfServiceLevel = MqttQualityOfServiceLevel.ExactlyOnce;
             return this;
         }
-        
+
         public MqttTopicFilterBuilder WithNoLocal(bool value = true)
         {
             _noLocal = value;
             return this;
         }
-        
+
         public MqttTopicFilterBuilder WithRetainAsPublished(bool value = true)
         {
             _retainAsPublished = value;
             return this;
         }
-        
+
         public MqttTopicFilterBuilder WithRetainHandling(MqttRetainHandling value)
         {
             _retainHandling = value;

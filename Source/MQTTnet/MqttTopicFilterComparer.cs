@@ -28,7 +28,7 @@ namespace MQTTnet
 
             var topicOffset = 0;
             var topicLength = topic.Length;
-           
+
             fixed (char* topicPointer = topic)
             fixed (char* filterPointer = filter)
             {
@@ -43,10 +43,10 @@ namespace MQTTnet
                     var lastFilterChar = filterPointer[filterLength - 1];
                     if (lastFilterChar != MultiLevelWildcard && lastFilterChar != SingleLevelWildcard)
                     {
-                        return MqttTopicFilterCompareResult.NoMatch;    
+                        return MqttTopicFilterCompareResult.NoMatch;
                     }
                 }
-                
+
                 var isMultiLevelFilter = filterPointer[filterLength - 1] == MultiLevelWildcard;
                 var isReservedTopic = topicPointer[0] == ReservedTopicPrefix;
 

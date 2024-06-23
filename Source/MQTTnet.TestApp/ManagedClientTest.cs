@@ -2,16 +2,16 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Threading.Tasks;
-using System.IO;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Net;
 using MQTTnet.Client;
 using MQTTnet.Extensions.ManagedClient;
 using MQTTnet.Internal;
 using MQTTnet.Protocol;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace MQTTnet.TestApp
 {
@@ -50,7 +50,7 @@ namespace MQTTnet.TestApp
 
                 await managedClient.EnqueueAsync(topic: "Step", payload: "1");
                 await managedClient.EnqueueAsync(topic: "Step", payload: "2", MqttQualityOfServiceLevel.AtLeastOnce);
-                
+
                 await managedClient.SubscribeAsync(topic: "xyz", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtMostOnce);
                 await managedClient.SubscribeAsync(topic: "abc", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtMostOnce);
 

@@ -18,7 +18,7 @@ internal static class ObjectExtensions
                 WriteIndented = true
             });
         }
-        
+
         Console.WriteLine($"[{@object?.GetType().Name}]:\r\n{output}");
         return @object;
     }

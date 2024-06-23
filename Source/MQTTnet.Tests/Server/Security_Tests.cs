@@ -2,14 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Adapter;
 using MQTTnet.Client;
 using MQTTnet.Exceptions;
 using MQTTnet.Internal;
 using MQTTnet.Protocol;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Server
 {
@@ -22,7 +22,7 @@ namespace MQTTnet.Tests.Server
             using (var testEnvironment = CreateTestEnvironment())
             {
                 testEnvironment.IgnoreClientLogErrors = true;
-                
+
                 await testEnvironment.StartServer();
 
                 var publishedApplicationMessages = new List<MqttApplicationMessage>();
@@ -81,15 +81,15 @@ namespace MQTTnet.Tests.Server
                     }
 
                     await LongTestDelay();
-                    
+
                     await validClient.PublishStringAsync("HELLO 2");
-                    
+
                     await LongTestDelay();
-                    
+
                     await validClient.PublishStringAsync("HELLO 3");
-                    
+
                     await LongTestDelay();
-                    
+
                     Assert.AreEqual(3, publishedApplicationMessages.Count);
                     Assert.AreEqual(1, testEnvironment.Server.GetClientsAsync().GetAwaiter().GetResult().Count);
                 }

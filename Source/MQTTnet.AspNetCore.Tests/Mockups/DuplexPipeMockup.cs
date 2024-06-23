@@ -20,7 +20,7 @@ namespace MQTTnet.AspNetCore.Tests.Mockups
 
         PipeWriter IDuplexPipe.Output => Send.Writer;
 
-        public Pipe Receive { get; } 
+        public Pipe Receive { get; }
 
         public Pipe Send { get; }
     }

@@ -2,12 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Adapter;
 using MQTTnet.Client;
@@ -15,6 +9,12 @@ using MQTTnet.Internal;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
 using MQTTnet.Server;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Server
 {
@@ -794,7 +794,7 @@ namespace MQTTnet.Tests.Server
                 Assert.IsTrue(longBody.SequenceEqual(receivedBody ?? new byte[0]));
             }
         }
-        
+
         [TestMethod]
         public async Task Set_Subscription_At_Server()
         {

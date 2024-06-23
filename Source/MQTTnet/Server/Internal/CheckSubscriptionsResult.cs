@@ -2,8 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
 using MQTTnet.Protocol;
+using System.Collections.Generic;
 
 namespace MQTTnet.Server
 {
@@ -14,9 +14,9 @@ namespace MQTTnet.Server
         public bool IsSubscribed { get; set; }
 
         public bool RetainAsPublished { get; set; }
-        
+
         public List<uint> SubscriptionIdentifiers { get; set; }
-        
+
         public MqttQualityOfServiceLevel QualityOfServiceLevel { get; set; }
     }
 }

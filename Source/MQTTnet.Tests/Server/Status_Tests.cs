@@ -2,13 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Client;
 using MQTTnet.Protocol;
 using MQTTnet.Server;
 using MQTTnet.Tests.Mockups;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Server
 {
@@ -57,7 +57,7 @@ namespace MQTTnet.Tests.Server
                 var server = await testEnvironment.StartServer();
 
                 var c1 = await testEnvironment.ConnectClient(new MqttClientOptionsBuilder().WithClientId("client1"));
-                
+
                 await Task.Delay(1000);
 
                 var clientStatus = await server.GetClientsAsync();
@@ -144,7 +144,7 @@ namespace MQTTnet.Tests.Server
                     // At most once will send one packet to the client and the server will reply
                     // with an additional ACK packet.
                     await c1.PublishStringAsync("a", string.Empty, MqttQualityOfServiceLevel.AtLeastOnce);
-                    
+
                     await Task.Delay(500);
 
                     var clientStatus = await server.GetClientsAsync();

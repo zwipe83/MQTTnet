@@ -17,19 +17,19 @@ public static class PackageInspection_Samples
         /*
          * This sample covers the inspection of outgoing packages from the client.
          */
-        
+
         var mqttFactory = new MqttFactory();
-        
+
         using (var mqttClient = mqttFactory.CreateMqttClient())
         {
             var mqttClientOptions = mqttFactory.CreateClientOptionsBuilder()
                 .WithTcpServer("broker.hivemq.com")
                 .Build();
-            
+
             mqttClient.InspectPacketAsync += OnInspectPacket;
-            
+
             await mqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
-            
+
             Console.WriteLine("MQTT client is connected.");
 
             var mqttClientDisconnectOptions = mqttFactory.CreateClientDisconnectOptionsBuilder()

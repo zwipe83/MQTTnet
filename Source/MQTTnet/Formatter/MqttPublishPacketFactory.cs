@@ -2,10 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
 using MQTTnet.Exceptions;
 using MQTTnet.Packets;
 using MQTTnet.Server;
+using System;
 
 namespace MQTTnet.Formatter
 {
@@ -16,7 +16,7 @@ namespace MQTTnet.Formatter
             return new MqttPublishPacket
             {
                 Topic = publishPacket.Topic,
-                PayloadSegment = publishPacket.PayloadSegment, 
+                PayloadSegment = publishPacket.PayloadSegment,
                 Retain = publishPacket.Retain,
                 QualityOfServiceLevel = publishPacket.QualityOfServiceLevel,
                 Dup = publishPacket.Dup,
@@ -36,7 +36,7 @@ namespace MQTTnet.Formatter
             var packet = new MqttPublishPacket
             {
                 Topic = applicationMessage.Topic,
-                PayloadSegment = applicationMessage.PayloadSegment, 
+                PayloadSegment = applicationMessage.PayloadSegment,
                 QualityOfServiceLevel = applicationMessage.QualityOfServiceLevel,
                 Retain = applicationMessage.Retain,
                 Dup = applicationMessage.Dup,

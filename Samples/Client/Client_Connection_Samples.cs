@@ -6,12 +6,12 @@
 // ReSharper disable UnusedMember.Global
 // ReSharper disable InconsistentNaming
 
-using System.Security.Authentication;
-using System.Security.Cryptography.X509Certificates;
 using MQTTnet.Client;
 using MQTTnet.Extensions.WebSocket4Net;
 using MQTTnet.Formatter;
 using MQTTnet.Samples.Helpers;
+using System.Security.Authentication;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MQTTnet.Samples.Client;
 
@@ -449,7 +449,7 @@ public static class Client_Connection_Samples
             var mqttClientOptions = new MqttClientOptionsBuilder()
                 .WithTcpServer("test.mosquitto.org", 8883)
                 .WithTlsOptions(new MqttClientTlsOptionsBuilder()
-                    .WithTrustChain(caChain) 
+                    .WithTrustChain(caChain)
                     .Build())
                 .Build();
 

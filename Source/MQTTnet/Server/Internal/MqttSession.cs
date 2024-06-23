@@ -2,16 +2,16 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Client;
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using MQTTnet.Client;
-using MQTTnet.Internal;
-using MQTTnet.Packets;
-using MQTTnet.Protocol;
 
 namespace MQTTnet.Server
 {
@@ -51,13 +51,13 @@ namespace MQTTnet.Server
         }
 
         public DateTime CreatedTimestamp { get; } = DateTime.UtcNow;
-        
+
         public DateTime? DisconnectedTimestamp { get; set; }
 
         public bool HasSubscribedTopics => _subscribedTopics != null && _subscribedTopics.Count > 0;
 
         public uint ExpiryInterval => _connectPacket.SessionExpiryInterval;
-        
+
         public string Id => _connectPacket.ClientId;
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace MQTTnet.Server
             // TODO: Keep the bus and only insert pending items again.
             // TODO: Check if packet identifier must be restarted or not.
             // TODO: Recover package identifier.
-            
+
             /*
                 The Session state in the Client consists of:
                 ·         QoS 1 and QoS 2 messages which have been sent to the Server, but have not been completely acknowledged.
@@ -198,7 +198,7 @@ namespace MQTTnet.Server
             lock (_unacknowledgedPublishPackets)
             {
                 unacknowledgedPublishPackets = _unacknowledgedPublishPackets.ToList();
-                _unacknowledgedPublishPackets.Clear();    
+                _unacknowledgedPublishPackets.Clear();
             }
 
             _packetBus.Clear();

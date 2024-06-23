@@ -65,7 +65,7 @@ namespace MQTTnet
                 {
                     return null;
                 }
-                
+
                 // just reference from _payloadSegment.Array
                 if (_payloadSegment.Count == _payloadSegment.Array.Length)
                 {

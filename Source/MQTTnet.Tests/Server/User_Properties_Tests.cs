@@ -2,16 +2,54 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+
+/* Unmerged change from project 'MQTTnet.Tests (net7.0)'
+Before:
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+After:
+using System.Collections.TestTools.UnitTesting;
+using MQTTnet.Client;
+using System.Formatter;
+using Microsoft.Implementations;
+*/
+
+/* Unmerged change from project 'MQTTnet.Tests (net452)'
+Before:
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+After:
+using System.Collections.TestTools.UnitTesting;
+using MQTTnet.Client;
+using System.Formatter;
+using Microsoft.Implementations;
+*/
+
+/* Unmerged change from project 'MQTTnet.Tests (net48)'
+Before:
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+After:
+using System.Collections.TestTools.UnitTesting;
+using MQTTnet.Client;
+using System.Formatter;
+using Microsoft.Implementations;
+*/
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Client;
 using MQTTnet.Formatter;
-using MQTTnet.Implementations;
 using MQTTnet.Internal;
 using MQTTnet.Packets;
 using MQTTnet.Tests.Mockups;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Server
 {

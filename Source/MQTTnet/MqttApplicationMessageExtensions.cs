@@ -2,9 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Internal;
 using System;
 using System.Text;
-using MQTTnet.Internal;
 
 namespace MQTTnet
 {
@@ -17,7 +17,7 @@ namespace MQTTnet
                 throw new ArgumentNullException(nameof(applicationMessage));
             }
 
-            if(applicationMessage.PayloadSegment == EmptyBuffer.ArraySegment)
+            if (applicationMessage.PayloadSegment == EmptyBuffer.ArraySegment)
             {
                 return null;
             }

@@ -3,7 +3,6 @@
 // See the LICENSE file in the project root for more information.
 
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Jobs;
 using MQTTnet.Client;
 using MQTTnet.Server;
 using System.Collections.Generic;
@@ -58,7 +57,7 @@ namespace MQTTnet.Benchmarks
                 var subscribeOptions = new MqttClientSubscribeOptionsBuilder()
                        .WithTopicFilter(topic, Protocol.MqttQualityOfServiceLevel.AtMostOnce)
                        .Build();
-                
+
                 _mqttClient.SubscribeAsync(subscribeOptions).GetAwaiter().GetResult();
             }
         }

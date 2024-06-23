@@ -2,11 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
 using MQTTnet.Exceptions;
 using MQTTnet.Formatter;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
+using System;
 
 namespace MQTTnet.Client
 {
@@ -23,7 +23,7 @@ namespace MQTTnet.Client
 
             return CreateForMqtt311(connAckPacket);
         }
-        
+
         static MqttClientConnectResult CreateForMqtt500(MqttConnAckPacket connAckPacket)
         {
             if (connAckPacket == null) throw new ArgumentNullException(nameof(connAckPacket));
@@ -31,7 +31,7 @@ namespace MQTTnet.Client
             return new MqttClientConnectResult
             {
                 IsSessionPresent = connAckPacket.IsSessionPresent,
-                ResultCode = (MqttClientConnectResultCode) (int) connAckPacket.ReasonCode,
+                ResultCode = (MqttClientConnectResultCode)(int)connAckPacket.ReasonCode,
                 WildcardSubscriptionAvailable = connAckPacket.WildcardSubscriptionAvailable,
                 RetainAvailable = connAckPacket.RetainAvailable,
                 AssignedClientIdentifier = connAckPacket.AssignedClientIdentifier,
@@ -51,7 +51,7 @@ namespace MQTTnet.Client
                 UserProperties = connAckPacket.UserProperties
             };
         }
-        
+
         static MqttClientConnectResult CreateForMqtt311(MqttConnAckPacket connAckPacket)
         {
             if (connAckPacket == null) throw new ArgumentNullException(nameof(connAckPacket));
@@ -70,34 +70,34 @@ namespace MQTTnet.Client
             switch (connectReturnCode)
             {
                 case MqttConnectReturnCode.ConnectionAccepted:
-                {
-                    return MqttClientConnectResultCode.Success;
-                }
+                    {
+                        return MqttClientConnectResultCode.Success;
+                    }
 
                 case MqttConnectReturnCode.ConnectionRefusedUnacceptableProtocolVersion:
-                {
-                    return MqttClientConnectResultCode.UnsupportedProtocolVersion;
-                }
+                    {
+                        return MqttClientConnectResultCode.UnsupportedProtocolVersion;
+                    }
 
                 case MqttConnectReturnCode.ConnectionRefusedNotAuthorized:
-                {
-                    return MqttClientConnectResultCode.NotAuthorized;
-                }
+                    {
+                        return MqttClientConnectResultCode.NotAuthorized;
+                    }
 
                 case MqttConnectReturnCode.ConnectionRefusedBadUsernameOrPassword:
-                {
-                    return MqttClientConnectResultCode.BadUserNameOrPassword;
-                }
+                    {
+                        return MqttClientConnectResultCode.BadUserNameOrPassword;
+                    }
 
                 case MqttConnectReturnCode.ConnectionRefusedIdentifierRejected:
-                {
-                    return MqttClientConnectResultCode.ClientIdentifierNotValid;
-                }
+                    {
+                        return MqttClientConnectResultCode.ClientIdentifierNotValid;
+                    }
 
                 case MqttConnectReturnCode.ConnectionRefusedServerUnavailable:
-                {
-                    return MqttClientConnectResultCode.ServerUnavailable;
-                }
+                    {
+                        return MqttClientConnectResultCode.ServerUnavailable;
+                    }
 
                 default:
                     throw new MqttProtocolViolationException("Received unexpected return code.");

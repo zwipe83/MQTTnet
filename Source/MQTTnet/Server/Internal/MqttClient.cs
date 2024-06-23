@@ -2,11 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using MQTTnet.Adapter;
 using MQTTnet.Client;
 using MQTTnet.Diagnostics;
@@ -16,6 +11,11 @@ using MQTTnet.Internal;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
 using MQTTnet.Server.Disconnecting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Server
 {
@@ -233,26 +233,26 @@ namespace MQTTnet.Server
             switch (publishPacket.QualityOfServiceLevel)
             {
                 case MqttQualityOfServiceLevel.AtMostOnce:
-                {
-                    // Do nothing since QoS 0 has no ACK at all!
-                    break;
-                }
+                    {
+                        // Do nothing since QoS 0 has no ACK at all!
+                        break;
+                    }
                 case MqttQualityOfServiceLevel.AtLeastOnce:
-                {
-                    var pubAckPacket = MqttPacketFactories.PubAck.Create(publishPacket, dispatchApplicationMessageResult);
-                    Session.EnqueueControlPacket(new MqttPacketBusItem(pubAckPacket));
-                    break;
-                }
+                    {
+                        var pubAckPacket = MqttPacketFactories.PubAck.Create(publishPacket, dispatchApplicationMessageResult);
+                        Session.EnqueueControlPacket(new MqttPacketBusItem(pubAckPacket));
+                        break;
+                    }
                 case MqttQualityOfServiceLevel.ExactlyOnce:
-                {
-                    var pubRecPacket = MqttPacketFactories.PubRec.Create(publishPacket, dispatchApplicationMessageResult);
-                    Session.EnqueueControlPacket(new MqttPacketBusItem(pubRecPacket));
-                    break;
-                }
+                    {
+                        var pubRecPacket = MqttPacketFactories.PubRec.Create(publishPacket, dispatchApplicationMessageResult);
+                        Session.EnqueueControlPacket(new MqttPacketBusItem(pubRecPacket));
+                        break;
+                    }
                 default:
-                {
-                    throw new MqttCommunicationException("Received a not supported QoS level");
-                }
+                    {
+                        throw new MqttCommunicationException("Received a not supported QoS level");
+                    }
             }
         }
 

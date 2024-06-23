@@ -3,11 +3,11 @@
 // See the LICENSE file in the project root for more information.
 
 using MQTTnet.Exceptions;
+using MQTTnet.Internal;
 using MQTTnet.Packets;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MQTTnet.Internal;
 
 namespace MQTTnet.PacketDispatcher
 {
@@ -23,12 +23,12 @@ namespace MQTTnet.PacketDispatcher
                 Type = typeof(TPacket),
                 Identifier = packetIdentifier
             };
-            
+
             _owningPacketDispatcher = owningPacketDispatcher ?? throw new ArgumentNullException(nameof(owningPacketDispatcher));
         }
-        
+
         public MqttPacketAwaitableFilter Filter { get; }
-        
+
         public async Task<TPacket> WaitOneAsync(CancellationToken cancellationToken)
         {
             using (cancellationToken.Register(() => Fail(new MqttCommunicationTimedOutException())))
@@ -48,7 +48,7 @@ namespace MQTTnet.PacketDispatcher
         public void Fail(Exception exception)
         {
             if (exception == null) throw new ArgumentNullException(nameof(exception));
-            
+
             _promise.TrySetException(exception);
         }
 

@@ -1,14 +1,14 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+using MQTTnet.Server;
+using MQTTnet.Tests.Mockups;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MQTTnet.Packets;
-using MQTTnet.Protocol;
-using MQTTnet.Server;
-using MQTTnet.Tests.Mockups;
 
 namespace MQTTnet.Tests.Server
 {
@@ -557,7 +557,7 @@ namespace MQTTnet.Tests.Server
             var eventContainer = new MqttServerEventContainer();
             var retainedMessagesManager = new MqttRetainedMessagesManager(eventContainer, logger);
             var sessionManager = new MqttClientSessionsManager(serverOptions, retainedMessagesManager, eventContainer, logger);
-            _clientSession = new MqttSession(new MqttConnectPacket{ ClientId = clientId }, new Dictionary<object, object>(), serverOptions, eventContainer, retainedMessagesManager, sessionManager);
+            _clientSession = new MqttSession(new MqttConnectPacket { ClientId = clientId }, new Dictionary<object, object>(), serverOptions, eventContainer, retainedMessagesManager, sessionManager);
 
             List<string> topicsToSubscribe;
 

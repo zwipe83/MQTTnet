@@ -2,12 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Adapter;
 using MQTTnet.Diagnostics;
@@ -17,6 +11,12 @@ using MQTTnet.Packets;
 using MQTTnet.Protocol;
 using MQTTnet.Tests.Helpers;
 using MQTTnet.Tests.Mockups;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
 
 namespace MQTTnet.Tests.Formatter
 {
@@ -213,7 +213,7 @@ namespace MQTTnet.Tests.Formatter
                     MqttSubscribeReasonCode.UnspecifiedError
                 }
             };
-            
+
             DeserializeAndCompare(p, "kAYAewABAoA=");
         }
 
@@ -506,7 +506,7 @@ namespace MQTTnet.Tests.Formatter
                     MqttSubscribeReasonCode.UnspecifiedError
                 }
             };
-            
+
             SerializeAndCompare(p, "kAYAewABAoA=");
         }
 

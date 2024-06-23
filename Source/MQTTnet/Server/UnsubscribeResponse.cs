@@ -2,9 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
+using System.Collections.Generic;
 
 namespace MQTTnet.Server
 {
@@ -15,9 +15,9 @@ namespace MQTTnet.Server
         /// MQTTv5 only.
         /// </summary>
         public MqttUnsubscribeReasonCode ReasonCode { get; set; }
-        
+
         public List<MqttUserProperty> UserProperties { get; } = new List<MqttUserProperty>();
-        
+
         public string ReasonString { get; set; }
     }
 }

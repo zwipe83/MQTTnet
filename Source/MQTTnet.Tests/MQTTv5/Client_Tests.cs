@@ -2,15 +2,15 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Client;
 using MQTTnet.Formatter;
 using MQTTnet.Internal;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.MQTTv5
 {
@@ -61,7 +61,7 @@ namespace MQTTnet.Tests.MQTTv5
                 Assert.AreEqual(2, receivedMessage.UserProperties.Count);
             }
         }
-        
+
         [TestMethod]
         public async Task Connect()
         {
@@ -208,7 +208,7 @@ namespace MQTTnet.Tests.MQTTv5
             using (var testEnvironment = CreateTestEnvironment())
             {
                 await testEnvironment.StartServer();
-                
+
                 var client1 = await testEnvironment.ConnectClient(o => o.WithProtocolVersion(MqttProtocolVersion.V500).WithClientId("client1"));
 
                 var testMessageHandler = testEnvironment.CreateApplicationMessageHandler(client1);

@@ -2,11 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Certificates;
 using System;
 using System.Net;
 using System.Net.Security;
 using System.Security.Authentication;
-using MQTTnet.Certificates;
 #if !WINDOWS_UWP
 using System.Security.Cryptography.X509Certificates;
 #endif

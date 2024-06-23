@@ -2,8 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
 using MQTTnet.Protocol;
+using System.Collections.Generic;
 
 namespace MQTTnet.Packets
 {
@@ -13,7 +13,7 @@ namespace MQTTnet.Packets
         public byte[] AuthenticationData { get; set; }
 
         public string AuthenticationMethod { get; set; }
-        
+
         public MqttAuthenticateReasonCode ReasonCode { get; set; }
 
         public string ReasonString { get; set; }

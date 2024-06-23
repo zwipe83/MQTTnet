@@ -2,6 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Client;
+using MQTTnet.Protocol;
+using MQTTnet.Server;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -9,9 +12,6 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using MQTTnet.Client;
-using MQTTnet.Protocol;
-using MQTTnet.Server;
 
 namespace MQTTnet.TestApp
 {
@@ -80,7 +80,7 @@ namespace MQTTnet.TestApp
 
                 var message = new MqttApplicationMessageBuilder().WithTopic("t")
                     .Build();
-                
+
                 var stopwatch = new Stopwatch();
 
                 for (var i = 0; i < 10; i++)

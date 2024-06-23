@@ -65,7 +65,7 @@ namespace MQTTnet.Internal
             {
                 return false;
             }
-            
+
             System.Threading.Tasks.Task.Run(() => _taskCompletionSource.TrySetResult(result));
             SpinWait.SpinUntil(() => _taskCompletionSource.Task.IsCompleted);
 

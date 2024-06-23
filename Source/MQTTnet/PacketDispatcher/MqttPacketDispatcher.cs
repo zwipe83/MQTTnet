@@ -2,9 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Packets;
 using System;
 using System.Collections.Generic;
-using MQTTnet.Packets;
 
 namespace MQTTnet.PacketDispatcher
 {
@@ -54,7 +54,7 @@ namespace MQTTnet.PacketDispatcher
             lock (_waiters)
             {
                 FailAll(exception);
-                
+
                 // Make sure that no task can start waiting after this instance is already disposed.
                 // This will prevent unexpected freezes.
                 _isDisposed = true;
@@ -111,7 +111,7 @@ namespace MQTTnet.PacketDispatcher
             lock (_waiters)
             {
                 ThrowIfDisposed();
-                
+
                 for (var i = _waiters.Count - 1; i >= 0; i--)
                 {
                     var entry = _waiters[i];

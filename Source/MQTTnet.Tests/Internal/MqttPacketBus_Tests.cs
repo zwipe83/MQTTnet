@@ -2,18 +2,18 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Internal;
 using MQTTnet.Packets;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Internal
 {
     [TestClass]
     public sealed class MqttPacketBus_Tests
-    {       
+    {
         [TestMethod]
         public void Alternate_Priorities()
         {

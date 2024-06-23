@@ -1,4 +1,10 @@
 #if !(NET452 || NET461 || NET48)
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MQTTnet.Certificates;
+using MQTTnet.Client;
+using MQTTnet.Formatter;
+using MQTTnet.Protocol;
+using MQTTnet.Server;
 using System;
 using System.Collections.Concurrent;
 using System.Diagnostics;
@@ -10,12 +16,6 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MQTTnet.Certificates;
-using MQTTnet.Client;
-using MQTTnet.Formatter;
-using MQTTnet.Protocol;
-using MQTTnet.Server;
 
 namespace MQTTnet.Tests.Server
 {
@@ -318,7 +318,7 @@ namespace MQTTnet.Tests.Server
             {
                 _certificates = new X509Certificate2Collection(CreateSelfSignedCertificate("1.3.6.1.5.5.7.3.2"));
             }
-            
+
             public void Dispose()
             {
                 if (_certificates != null)

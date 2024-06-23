@@ -9,7 +9,7 @@ namespace MQTTnet.Diagnostics
     /*
      * The logger uses generic parameters in order to avoid boxing of parameter values like integers etc.
      */
-    
+
     public static class MqttNetSourceLoggerExtensions
     {
         public static void Error<TParameter1>(this MqttNetSourceLogger logger, Exception exception, string message, TParameter1 parameter1)
@@ -91,7 +91,7 @@ namespace MQTTnet.Diagnostics
 
             logger.Publish(logLevel, message, new object[] { parameter1 }, exception);
         }
-        
+
         public static void Publish<TParameter1, TParameter2>(this MqttNetSourceLogger logger, MqttNetLogLevel logLevel, Exception exception, string message, TParameter1 parameter1, TParameter2 parameter2)
         {
             if (!logger.IsEnabled)

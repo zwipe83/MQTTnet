@@ -1,14 +1,14 @@
+using MQTTnet.Diagnostics;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MQTTnet.Diagnostics;
 
 namespace MQTTnet.Client
 {
     public interface IMqttClient : IDisposable
     {
         event Func<MqttApplicationMessageReceivedEventArgs, Task> ApplicationMessageReceivedAsync;
-        
+
         event Func<MqttClientConnectedEventArgs, Task> ConnectedAsync;
 
         event Func<MqttClientConnectingEventArgs, Task> ConnectingAsync;

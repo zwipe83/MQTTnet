@@ -1,10 +1,10 @@
-using System;
-using System.Threading;
 using MQTTnet.Adapter;
 using MQTTnet.Diagnostics;
 using MQTTnet.Formatter;
 using MQTTnet.Packets;
 using MQTTnet.Tests.Mockups;
+using System;
+using System.Threading;
 
 namespace MQTTnet.Tests
 {

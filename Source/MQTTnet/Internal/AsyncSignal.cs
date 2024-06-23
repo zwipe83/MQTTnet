@@ -129,7 +129,7 @@ namespace MQTTnet.Internal
             public void Dispose()
             {
                 _cancellationTokenRegistration.Dispose();
-                
+
                 if (_isCompleted)
                 {
                     // Avoid allocation of _ObjectDisposedException_ which may not be used.

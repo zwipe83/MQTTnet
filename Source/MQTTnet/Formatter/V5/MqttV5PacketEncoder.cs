@@ -2,18 +2,18 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Linq;
 using MQTTnet.Exceptions;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
+using System;
+using System.Linq;
 
 namespace MQTTnet.Formatter.V5
 {
     public sealed class MqttV5PacketEncoder
     {
         const int FixedHeaderSize = 1;
-        
+
         readonly MqttBufferWriter _bufferWriter;
         readonly MqttV5PropertiesWriter _propertiesWriter = new MqttV5PropertiesWriter(new MqttBufferWriter(1024, 4096));
 

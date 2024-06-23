@@ -2,11 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Threading;
-using System.Threading.Tasks;
 using MQTTnet.Client;
 using MQTTnet.Diagnostics;
 using MQTTnet.Server;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.TestApp
 {
@@ -18,7 +18,7 @@ namespace MQTTnet.TestApp
             MqttNetConsoleLogger.ForwardToConsole(logger);
 
             var factory = new MqttFactory(logger);
-            var server = factory.CreateMqttServer( new MqttServerOptionsBuilder().Build());
+            var server = factory.CreateMqttServer(new MqttServerOptionsBuilder().Build());
             var client = factory.CreateMqttClient();
 
             await server.StartAsync();

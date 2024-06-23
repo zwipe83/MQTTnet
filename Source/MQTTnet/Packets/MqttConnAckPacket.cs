@@ -2,8 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
 using MQTTnet.Protocol;
+using System.Collections.Generic;
 
 namespace MQTTnet.Packets
 {
@@ -39,13 +39,13 @@ namespace MQTTnet.Packets
         public string ResponseInformation { get; set; }
 
         public bool RetainAvailable { get; set; }
-        
+
         public MqttConnectReturnCode ReturnCode { get; set; }
 
         public ushort ServerKeepAlive { get; set; }
 
         public string ServerReference { get; set; }
-        
+
         public uint SessionExpiryInterval { get; set; }
 
         public bool SharedSubscriptionAvailable { get; set; }

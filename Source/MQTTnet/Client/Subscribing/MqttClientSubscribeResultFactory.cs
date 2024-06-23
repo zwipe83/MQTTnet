@@ -2,11 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Exceptions;
+using MQTTnet.Packets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MQTTnet.Exceptions;
-using MQTTnet.Packets;
 
 namespace MQTTnet.Client
 {

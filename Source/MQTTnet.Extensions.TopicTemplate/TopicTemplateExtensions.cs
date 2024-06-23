@@ -2,11 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Linq;
 using MQTTnet.Client;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
+using System;
+using System.Linq;
 
 namespace MQTTnet.Extensions.TopicTemplate
 {
@@ -74,7 +74,7 @@ namespace MQTTnet.Extensions.TopicTemplate
         {
             return new MqttApplicationMessageBuilder().WithTopicTemplate(topicTemplate);
         }
-        
+
         /// <summary>
         ///     Return a message builder to respond to this message. The
         ///     message's response topic and correlation data are included
@@ -158,7 +158,7 @@ namespace MQTTnet.Extensions.TopicTemplate
                     RetainHandling = retainHandling
                 });
         }
-        
+
         /// <summary>
         ///     Set the publication topic according to the topic template. The template
         ///     must not have remaining (unset) parameters or contain wildcards.

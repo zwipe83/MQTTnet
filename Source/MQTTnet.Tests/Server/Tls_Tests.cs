@@ -1,4 +1,10 @@
 #if !WINDOWS_UWP && (NET48_OR_GREATER || NET5_0_OR_GREATER)
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MQTTnet.Certificates;
+using MQTTnet.Client;
+using MQTTnet.Formatter;
+using MQTTnet.Server;
+using MQTTnet.Tests.Mockups;
 using System;
 using System.Linq;
 using System.Net;
@@ -7,12 +13,6 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MQTTnet.Certificates;
-using MQTTnet.Client;
-using MQTTnet.Formatter;
-using MQTTnet.Server;
-using MQTTnet.Tests.Mockups;
 
 namespace MQTTnet.Tests.Server
 {
@@ -25,7 +25,7 @@ namespace MQTTnet.Tests.Server
             sanBuilder.AddIpAddress(IPAddress.Loopback);
             sanBuilder.AddIpAddress(IPAddress.IPv6Loopback);
             sanBuilder.AddDnsName("localhost");
-            
+
             using (var rsa = RSA.Create())
             {
                 var certRequest = new CertificateRequest("CN=localhost", rsa, HashAlgorithmName.SHA512, RSASignaturePadding.Pkcs1);
@@ -187,7 +187,7 @@ namespace MQTTnet.Tests.Server
             var clientOptions = clientOptionsBuilder.Build();
             return await testEnvironment.ConnectClient(clientOptions);
         }
-        
+
         sealed class CertificateProvider : ICertificateProvider
         {
             public X509Certificate2 CurrentCertificate { get; set; }

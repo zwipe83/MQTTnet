@@ -4,11 +4,11 @@
 
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
-using MQTTnet.Client;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using MQTTnet.AspNetCore.Client;
 using MQTTnet.AspNetCore;
+using MQTTnet.AspNetCore.Client;
+using MQTTnet.Client;
 using MQTTnet.Diagnostics;
 
 namespace MQTTnet.Benchmarks
@@ -26,13 +26,16 @@ namespace MQTTnet.Benchmarks
         {
             _host = WebHost.CreateDefaultBuilder()
                    .UseKestrel(o => o.ListenAnyIP(1883, l => l.UseMqtt()))
-                   .ConfigureServices(services => {
-                        services
-                            .AddHostedMqttServer(mqttServerOptions => mqttServerOptions.WithoutDefaultEndpoint())
-                            .AddMqttConnectionHandler();
+                   .ConfigureServices(services =>
+                   {
+                       services
+                           .AddHostedMqttServer(mqttServerOptions => mqttServerOptions.WithoutDefaultEndpoint())
+                           .AddMqttConnectionHandler();
                    })
-                   .Configure(app => {
-                       app.UseMqttServer(s => {
+                   .Configure(app =>
+                   {
+                       app.UseMqttServer(s =>
+                       {
 
                        });
                    })

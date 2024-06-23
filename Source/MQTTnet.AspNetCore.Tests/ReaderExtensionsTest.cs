@@ -3,11 +3,10 @@
 // See the LICENSE file in the project root for more information.
 
 #if NETCOREAPP3_1
-using System.Buffers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MQTTnet.AspNetCore;
 using MQTTnet.Formatter;
 using MQTTnet.Packets;
+using System.Buffers;
 
 namespace MQTTnet.AspNetCore.Tests
 {
@@ -19,7 +18,7 @@ namespace MQTTnet.AspNetCore.Tests
         {
             var serializer = new MqttPacketFormatterAdapter(MqttProtocolVersion.V311, new MqttBufferWriter(4096, 65535));
 
-            var buffer = serializer.Encode(new MqttPublishPacket {Topic = "a", PayloadSegment = new byte[5]}).Join();
+            var buffer = serializer.Encode(new MqttPublishPacket { Topic = "a", PayloadSegment = new byte[5] }).Join();
 
             var sequence = new ReadOnlySequence<byte>(buffer.Array, buffer.Offset, buffer.Count);
 
@@ -29,7 +28,7 @@ namespace MQTTnet.AspNetCore.Tests
             var observed = part.Start;
             var result = false;
             var read = 0;
-            
+
             part = sequence.Slice(sequence.Start, 0); // empty message should fail
             result = serializer.TryDecode(part, out packet, out consumed, out observed, out read);
             Assert.IsFalse(result);

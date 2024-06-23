@@ -1,6 +1,6 @@
+using MQTTnet.Extensions.TopicTemplate;
 using System;
 using System.Collections.Generic;
-using MQTTnet.Extensions.TopicTemplate;
 
 namespace MQTTnet.Tests
 {
@@ -32,7 +32,7 @@ namespace MQTTnet.Tests
             {
                 maxNumLevel3Topics = 1;
             }
-            
+
             MqttTopicTemplate baseTemplate = new MqttTopicTemplate("{publisher}/{building}/{level}/{sensor}");
 
             for (var p = 0; p < numPublishers; ++p)
@@ -41,7 +41,7 @@ namespace MQTTnet.Tests
                 var publisherName = "pub" + p;
                 var publisherTemplate = baseTemplate
                     .WithParameter("publisher", publisherName);
-                
+
                 for (var l1 = 0; l1 < numLevel1Topics; ++l1)
                 {
                     var l1Template = publisherTemplate.WithParameter("building", "building" + (l1 + 1));

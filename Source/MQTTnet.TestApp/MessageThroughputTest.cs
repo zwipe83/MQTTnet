@@ -1,11 +1,11 @@
 using MQTTnet.Client;
+using MQTTnet.Internal;
 using MQTTnet.Server;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Linq;
-using MQTTnet.Internal;
 
 namespace MQTTnet.TestApp
 {

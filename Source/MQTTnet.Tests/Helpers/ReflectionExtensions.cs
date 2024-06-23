@@ -21,7 +21,7 @@ namespace MQTTnet.Tests.Helpers
             {
                 throw new ArgumentException($"Field {fieldName} not found.");
             }
-            
+
             return field.GetValue(source);
         }
     }

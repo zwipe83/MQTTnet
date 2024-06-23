@@ -6,10 +6,10 @@
 // ReSharper disable UnusedMember.Global
 // ReSharper disable InconsistentNaming
 
+using MQTTnet.Server;
 using System.Net;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using MQTTnet.Server;
 
 namespace MQTTnet.Samples.Server;
 
@@ -28,7 +28,7 @@ public static class Server_TLS_Samples
 
         // This certificate is self signed so that
         var certificate = CreateSelfSignedCertificate("1.3.6.1.5.5.7.3.1");
-        
+
         var mqttServerOptions = new MqttServerOptionsBuilder().WithEncryptionCertificate(certificate).WithEncryptedEndpoint().Build();
 
         using (var mqttServer = mqttFactory.CreateMqttServer(mqttServerOptions))

@@ -2,11 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MQTTnet.Internal;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MQTTnet.Internal;
 
 namespace MQTTnet.Tests.Internal
 {
@@ -61,7 +61,7 @@ namespace MQTTnet.Tests.Internal
             var queue = new AsyncQueue<int>();
 
             var sum = 0;
-            var worker = Task.Run(async () => 
+            var worker = Task.Run(async () =>
             {
                 while (sum < 6)
                 {

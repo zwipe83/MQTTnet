@@ -2,17 +2,71 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MQTTnet.Diagnostics;
 using MQTTnet.Internal;
 using MQTTnet.Protocol;
 using MQTTnet.Server;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+/* Unmerged change from project 'MQTTnet.TestApp (net7.0)'
+Before:
+using MQTTnet.Protocol;
+using MQTTnet.Server;
+using Newtonsoft.Json;
+After:
+using MQTTnet.Linq;
+using MQTTnet.Text;
+using System.Threading.Json;
+*/
+
+/* Unmerged change from project 'MQTTnet.TestApp (net6.0)'
+Before:
+using MQTTnet.Protocol;
+using MQTTnet.Server;
+using Newtonsoft.Json;
+After:
+using MQTTnet.Linq;
+using MQTTnet.Text;
+using System.Threading.Json;
+*/
+
+/* Unmerged change from project 'MQTTnet.TestApp (net8.0)'
+Before:
+using MQTTnet.Protocol;
+using MQTTnet.Server;
+using Newtonsoft.Json;
+After:
+using MQTTnet.Linq;
+using MQTTnet.Text;
+using System.Threading.Json;
+*/
+
+/* Unmerged change from project 'MQTTnet.TestApp (net452)'
+Before:
+using MQTTnet.Protocol;
+using MQTTnet.Server;
+using Newtonsoft.Json;
+After:
+using MQTTnet.Linq;
+using MQTTnet.Text;
+using System.Threading.Json;
+*/
+
+/* Unmerged change from project 'MQTTnet.TestApp (net461)'
+Before:
+using MQTTnet.Protocol;
+using MQTTnet.Server;
+using Newtonsoft.Json;
+After:
+using MQTTnet.Linq;
+using MQTTnet.Text;
+using System.Threading.Json;
+*/
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MQTTnet.TestApp
 {
@@ -22,7 +76,7 @@ namespace MQTTnet.TestApp
         {
             var mqttServer = new MqttFactory().CreateMqttServer(new MqttServerOptions());
             mqttServer.StartAsync().GetAwaiter().GetResult();
-            
+
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
         }
@@ -31,7 +85,7 @@ namespace MQTTnet.TestApp
         {
             var logger = new MqttNetEventLogger();
             MqttNetConsoleLogger.ForwardToConsole(logger);
-           
+
             var mqttFactory = new MqttFactory(logger);
             var mqttServer = mqttFactory.CreateMqttServer(new MqttServerOptions());
             mqttServer.StartAsync().GetAwaiter().GetResult();
@@ -39,7 +93,7 @@ namespace MQTTnet.TestApp
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
         }
-        
+
         public static async Task RunAsync()
         {
             try
@@ -58,7 +112,7 @@ namespace MQTTnet.TestApp
                 var mqttServer = new MqttFactory().CreateMqttServer(options);
 
                 const string Filename = "C:\\MQTT\\RetainedMessages.json";
-                
+
                 mqttServer.RetainedMessageChangedAsync += e =>
                 {
                     var directory = Path.GetDirectoryName(Filename);
@@ -70,13 +124,13 @@ namespace MQTTnet.TestApp
                     File.WriteAllText(Filename, JsonConvert.SerializeObject(e.StoredRetainedMessages));
                     return CompletedTask.Instance;
                 };
-                
+
                 mqttServer.RetainedMessagesClearedAsync += e =>
                 {
                     File.Delete(Filename);
                     return CompletedTask.Instance;
                 };
-                
+
                 mqttServer.LoadingRetainedMessageAsync += e =>
                 {
                     List<MqttApplicationMessage> retainedMessages;
@@ -112,7 +166,7 @@ namespace MQTTnet.TestApp
 
                     return CompletedTask.Instance;
                 };
-                
+
                 mqttServer.ValidatingConnectionAsync += e =>
                 {
                     if (e.ClientId == "SpecialClient")
@@ -141,7 +195,7 @@ namespace MQTTnet.TestApp
 
                     return CompletedTask.Instance;
                 };
-                
+
                 mqttServer.InterceptingPublishAsync += e =>
                 {
                     var payloadText = string.Empty;
@@ -152,7 +206,7 @@ namespace MQTTnet.TestApp
                             e.ApplicationMessage.PayloadSegment.Offset,
                             e.ApplicationMessage.PayloadSegment.Count);
                     }
-                    
+
                     MqttNetConsoleLogger.PrintToConsole($"'{e.ClientId}' reported '{e.ApplicationMessage.Topic}' > '{payloadText}'", ConsoleColor.Magenta);
                     return CompletedTask.Instance;
                 };

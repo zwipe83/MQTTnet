@@ -2,13 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Client;
 using MQTTnet.Formatter;
 using MQTTnet.Internal;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Server
 {
@@ -21,18 +21,18 @@ namespace MQTTnet.Tests.Server
             using (var testEnvironment = CreateTestEnvironment())
             {
                 await testEnvironment.StartServer();
-                
+
                 var client = testEnvironment.CreateClient();
-                
+
                 var connectResult = await client.ConnectAsync(new MqttClientOptionsBuilder()
                     .WithProtocolVersion(MqttProtocolVersion.V500)
                     .WithTcpServer("127.0.0.1", testEnvironment.ServerPort)
                     .Build());
-                
+
                 Assert.AreEqual(connectResult.TopicAliasMaximum, ushort.MaxValue);
             }
         }
-        
+
         [TestMethod]
         public async Task Publish_With_Topic_Alias()
         {
@@ -49,7 +49,7 @@ namespace MQTTnet.Tests.Server
                     {
                         receivedTopics.Add(e.ApplicationMessage.Topic);
                     }
-                    
+
                     return CompletedTask.Instance;
                 };
 

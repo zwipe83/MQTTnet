@@ -18,7 +18,7 @@ namespace MQTTnet.Samples.Client;
 public static class Client_Subscribe_Samples
 {
     static MqttTopicTemplate sampleTemplate = new MqttTopicTemplate("mqttnet/samples/topic/{id}");
-    
+
     public static async Task Handle_Received_Application_Message()
     {
         /*
@@ -67,7 +67,7 @@ public static class Client_Subscribe_Samples
 
         using (var mqttClient = mqttFactory.CreateMqttClient())
         {
-            mqttClient.ApplicationMessageReceivedAsync += delegate(MqttApplicationMessageReceivedEventArgs args)
+            mqttClient.ApplicationMessageReceivedAsync += delegate (MqttApplicationMessageReceivedEventArgs args)
             {
                 // Do some work with the message...
 

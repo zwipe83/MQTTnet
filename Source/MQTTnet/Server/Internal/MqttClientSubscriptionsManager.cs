@@ -2,14 +2,306 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+
+/* Unmerged change from project 'MQTTnet (netstandard2.1)'
+Before:
 using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (net7.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (netcoreapp3.1)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (net8.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (net48)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (net461)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (netstandard1.3)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (net452)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (uap10.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (net5.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+
+/* Unmerged change from project 'MQTTnet (netstandard2.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+*/
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+
+/* Unmerged change from project 'MQTTnet (netstandard2.1)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (net7.0)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (netcoreapp3.1)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (net8.0)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (net48)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (net461)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (netstandard1.3)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (net452)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (uap10.0)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (net5.0)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet (netstandard2.0)'
+Before:
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using MQTTnet.Protocol;
+using System;
+*/
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+/* Unmerged change from project 'MQTTnet (netstandard2.1)'
+Before:
 using MQTTnet.Internal;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (net7.0)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (netcoreapp3.1)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (net8.0)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (net48)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (net461)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (netstandard1.3)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (net452)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (uap10.0)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (net5.0)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'MQTTnet (netstandard2.0)'
+Before:
+using MQTTnet.Internal;
+using MQTTnet.Packets;
+using MQTTnet.Protocol;
+After:
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+*/
+
 
 namespace MQTTnet.Server
 {

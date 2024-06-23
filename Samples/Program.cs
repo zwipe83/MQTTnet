@@ -58,7 +58,7 @@ try
 {
     if (selectedSampleMethod.Invoke(null, null) is Task task)
     {
-        await task;    
+        await task;
     }
 }
 catch (Exception exception)

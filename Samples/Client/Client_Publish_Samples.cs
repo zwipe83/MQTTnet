@@ -41,11 +41,11 @@ public static class Client_Publish_Samples
             await mqttClient.PublishAsync(applicationMessage, CancellationToken.None);
 
             await mqttClient.DisconnectAsync();
-            
+
             Console.WriteLine("MQTT application message is published.");
         }
     }
-    
+
     public static async Task Publish_Multiple_Application_Messages()
     {
         /*
@@ -70,23 +70,23 @@ public static class Client_Publish_Samples
                 .Build();
 
             await mqttClient.PublishAsync(applicationMessage, CancellationToken.None);
-            
+
             applicationMessage = new MqttApplicationMessageBuilder()
                 .WithTopic("samples/temperature/living_room")
                 .WithPayload("20.0")
                 .Build();
-            
+
             await mqttClient.PublishAsync(applicationMessage, CancellationToken.None);
 
             applicationMessage = new MqttApplicationMessageBuilder()
                 .WithTopic("samples/temperature/living_room")
                 .WithPayload("21.0")
                 .Build();
-            
+
             await mqttClient.PublishAsync(applicationMessage, CancellationToken.None);
 
             await mqttClient.DisconnectAsync();
-            
+
             Console.WriteLine("MQTT application message is published.");
         }
     }

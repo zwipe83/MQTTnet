@@ -2,9 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using MQTTnet.Adapter;
 using MQTTnet.Client;
 using MQTTnet.Diagnostics;
@@ -12,6 +9,9 @@ using MQTTnet.Implementations;
 using MQTTnet.LowLevelClient;
 using MQTTnet.Server;
 using MQTTnet.Server.Disconnecting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using MqttClient = MQTTnet.Client.MqttClient;
 
 namespace MQTTnet

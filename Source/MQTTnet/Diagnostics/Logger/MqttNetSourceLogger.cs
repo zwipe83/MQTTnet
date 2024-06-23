@@ -18,7 +18,7 @@ namespace MQTTnet.Diagnostics
         }
 
         public bool IsEnabled => _logger.IsEnabled;
-        
+
         public void Publish(MqttNetLogLevel logLevel, string message, object[] parameters, Exception exception)
         {
             _logger.Publish(logLevel, _source, message, parameters, exception);

@@ -13,39 +13,39 @@ namespace MQTTnet.Formatter
             switch (reasonCode)
             {
                 case MqttConnectReasonCode.Success:
-                {
-                    return MqttConnectReturnCode.ConnectionAccepted;
-                }
+                    {
+                        return MqttConnectReturnCode.ConnectionAccepted;
+                    }
 
                 case MqttConnectReasonCode.Banned:
                 case MqttConnectReasonCode.NotAuthorized:
-                {
-                    return MqttConnectReturnCode.ConnectionRefusedNotAuthorized;
-                }
+                    {
+                        return MqttConnectReturnCode.ConnectionRefusedNotAuthorized;
+                    }
 
                 case MqttConnectReasonCode.BadAuthenticationMethod:
                 case MqttConnectReasonCode.BadUserNameOrPassword:
-                {
-                    return MqttConnectReturnCode.ConnectionRefusedBadUsernameOrPassword;
-                }
+                    {
+                        return MqttConnectReturnCode.ConnectionRefusedBadUsernameOrPassword;
+                    }
 
                 case MqttConnectReasonCode.ClientIdentifierNotValid:
-                {
-                    return MqttConnectReturnCode.ConnectionRefusedIdentifierRejected;
-                }
+                    {
+                        return MqttConnectReturnCode.ConnectionRefusedIdentifierRejected;
+                    }
 
                 case MqttConnectReasonCode.UnsupportedProtocolVersion:
-                {
-                    return MqttConnectReturnCode.ConnectionRefusedUnacceptableProtocolVersion;
-                }
+                    {
+                        return MqttConnectReturnCode.ConnectionRefusedUnacceptableProtocolVersion;
+                    }
 
                 case MqttConnectReasonCode.UseAnotherServer:
                 case MqttConnectReasonCode.ServerUnavailable:
                 case MqttConnectReasonCode.ServerBusy:
                 case MqttConnectReasonCode.ServerMoved:
-                {
-                    return MqttConnectReturnCode.ConnectionRefusedServerUnavailable;
-                }
+                    {
+                        return MqttConnectReturnCode.ConnectionRefusedServerUnavailable;
+                    }
 
                 default:
                     return MqttConnectReturnCode.ConnectionRefusedUnacceptableProtocolVersion;

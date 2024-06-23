@@ -19,7 +19,7 @@ namespace MQTTnet.Extensions.Rpc
             {
                 throw new ArgumentException("The method name cannot contain /, + or #.");
             }
-            
+
             var requestTopic = $"MQTTnet.RPC/{Guid.NewGuid():N}/{context.MethodName}";
             var responseTopic = requestTopic + "/response";
 

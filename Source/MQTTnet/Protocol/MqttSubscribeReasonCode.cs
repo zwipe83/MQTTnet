@@ -11,7 +11,7 @@ namespace MQTTnet.Protocol
         GrantedQoS1 = 0x01,
         GrantedQoS2 = 0x02,
         UnspecifiedError = 0x80,
-        
+
         // New in MQTTv5.
         ImplementationSpecificError = 131,
         NotAuthorized = 135,

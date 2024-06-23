@@ -2,11 +2,90 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (netstandard1.3)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (net5.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (netcoreapp3.1)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (net6.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (uap10.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (net7.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (netstandard2.0)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (net452)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (net48)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+
+/* Unmerged change from project 'MQTTnet.Extensions.ManagedClient (net461)'
+Before:
+using System;
+After:
+using MQTTnet.Internal;
+using System;
+*/
+using MQTTnet.Internal;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
-using MQTTnet.Internal;
 
 namespace MQTTnet.Extensions.ManagedClient
 {

@@ -2,14 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Diagnostics;
 using MQTTnet.Extensions.ManagedClient;
 using MQTTnet.Internal;
 using MQTTnet.Server;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Factory
 {
@@ -58,7 +58,7 @@ namespace MQTTnet.Tests.Factory
                     tcs.TrySetResult(null);
                     return CompletedTask.Instance;
                 };
-                
+
                 await Task.WhenAny(Task.Delay(managedClient.Options.ClientOptions.Timeout), tcs.Task);
             }
             finally

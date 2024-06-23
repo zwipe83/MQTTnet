@@ -2,9 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Diagnostics;
 using System;
 using System.Text;
-using MQTTnet.Diagnostics;
 
 namespace MQTTnet.TestApp
 {
@@ -15,7 +15,7 @@ namespace MQTTnet.TestApp
         public static void ForwardToConsole(MqttNetEventLogger logger)
         {
             if (logger == null) throw new ArgumentNullException(nameof(logger));
-            
+
             logger.LogMessagePublished -= PrintToConsole;
             logger.LogMessagePublished += PrintToConsole;
         }

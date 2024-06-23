@@ -2,13 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Formatter;
 using MQTTnet.Packets;
 using MQTTnet.Protocol;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Server
 {
@@ -40,12 +40,12 @@ namespace MQTTnet.Tests.Server
                 for (var i = 0; i < 6; i++)
                 {
                     await Task.Delay(500);
-                    
+
                     await client.SendAsync(MqttPingReqPacket.Instance, CancellationToken.None);
                     responsePacket = await client.ReceiveAsync(CancellationToken.None);
                     Assert.IsTrue(responsePacket is MqttPingRespPacket);
                 }
-                
+
                 // If we reach this point everything works as expected (server did not close the connection
                 // due to proper ping messages.
                 // Now we will wait 1.1 seconds because the server MUST wait 1.5 seconds in total (See spec).

@@ -7,11 +7,11 @@ namespace MQTTnet
     public enum MqttTopicFilterCompareResult
     {
         NoMatch,
-        
+
         IsMatch,
-        
+
         FilterInvalid,
-        
+
         TopicInvalid
     }
 }

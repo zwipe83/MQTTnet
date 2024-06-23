@@ -11,7 +11,7 @@ using System.Linq;
 namespace MQTTnet.Benchmarks
 {
     [MemoryDiagnoser]
-    public class UnsubscribeBenchmark : BaseBenchmark 
+    public class UnsubscribeBenchmark : BaseBenchmark
     {
         MqttServer _mqttServer;
         IMqttClient _mqttClient;

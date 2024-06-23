@@ -42,7 +42,7 @@ namespace MQTTnet.Internal
         public Task<IDisposable> EnterAsync(CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            
+
             if (_isDisposed)
             {
                 throw new ObjectDisposedException(nameof(AsyncLock));
@@ -104,7 +104,7 @@ namespace MQTTnet.Internal
             public AsyncLockWaiter(CancellationToken cancellationToken)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                
+
                 if (cancellationToken.CanBeCanceled)
                 {
                     _cancellationRegistration = cancellationToken.Register(Cancel);

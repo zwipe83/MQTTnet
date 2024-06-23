@@ -1,6 +1,6 @@
+using MQTTnet.Extensions.TopicTemplate;
 using System;
 using System.Collections.Generic;
-using MQTTnet.Extensions.TopicTemplate;
 
 namespace MQTTnet.TestApp
 {

@@ -4,7 +4,6 @@
 
 using System;
 using System.Threading.Tasks;
-using MQTTnet.Implementations;
 
 namespace MQTTnet.Internal
 {
@@ -12,7 +11,7 @@ namespace MQTTnet.Internal
     {
         readonly Action<TEventArgs> _handler;
         readonly Func<TEventArgs, Task> _asyncHandler;
-        
+
         public AsyncEventInvocator(Action<TEventArgs> handler, Func<TEventArgs, Task> asyncHandler)
         {
             _handler = handler;
@@ -24,13 +23,13 @@ namespace MQTTnet.Internal
             // Do not use ReferenceEquals! It will not work with delegates.
             return handler == _handler;
         }
-        
+
         public bool WrapsHandler(Func<TEventArgs, Task> handler)
         {
             // Do not use ReferenceEquals! It will not work with delegates.
             return handler == _asyncHandler;
         }
-        
+
         public Task InvokeAsync(TEventArgs eventArgs)
         {
             if (_handler != null)

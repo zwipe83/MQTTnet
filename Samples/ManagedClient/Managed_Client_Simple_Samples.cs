@@ -22,7 +22,7 @@ public sealed class Managed_Client_Simple_Samples
          * - Reconnecting when connection is lost.
          * - Storing pending messages in an internal queue so that an enqueue is possible while the client remains not connected.
          */
-        
+
         var mqttFactory = new MqttFactory();
 
         using (var managedMqttClient = mqttFactory.CreateManagedMqttClient())
@@ -42,10 +42,10 @@ public sealed class Managed_Client_Simple_Samples
             await managedMqttClient.EnqueueAsync("Topic", "Payload");
 
             Console.WriteLine("The managed MQTT client is connected.");
-            
+
             // Wait until the queue is fully processed.
             SpinWait.SpinUntil(() => managedMqttClient.PendingApplicationMessagesCount == 0, 10000);
-            
+
             Console.WriteLine($"Pending messages = {managedMqttClient.PendingApplicationMessagesCount}");
         }
     }

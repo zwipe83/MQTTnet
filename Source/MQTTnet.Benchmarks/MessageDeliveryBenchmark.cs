@@ -40,7 +40,7 @@ namespace MQTTnet.Benchmarks
         Dictionary<string, IMqttClient> _mqttPublisherClientsByPublisherName;
 
         Dictionary<string, List<string>> _topicsByPublisher;
-        Dictionary<string, string> _publisherByTopic;        
+        Dictionary<string, string> _publisherByTopic;
         List<string> _allSubscribedTopics; // Keep track of the subset of topics that are subscribed
 
 
@@ -134,7 +134,7 @@ namespace MQTTnet.Benchmarks
             if (topicIndexStep * NumSubscribedTopicsPerSubscriber * NumSubscribers != totalNumTopics)
             {
                 throw new System.Exception(
-                    String.Format("The total number of topics must be divisible by the number of subscribed topics across all subscribers. Total number of topics: {0}, topic step: {1}", 
+                    String.Format("The total number of topics must be divisible by the number of subscribed topics across all subscribers. Total number of topics: {0}, topic step: {1}",
                     totalNumTopics, topicIndexStep
                     ));
             }
@@ -188,7 +188,7 @@ namespace MQTTnet.Benchmarks
                 var publisherClient = _mqttPublisherClientsByPublisherName[publisherName];
                 _ = publisherClient.PublishAsync(message);
             }
-      
+
             // Wait one message per publish to be received by subscriber (in the subscriber's application message handler)
             try
             {

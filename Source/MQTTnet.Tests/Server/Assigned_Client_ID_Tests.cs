@@ -2,13 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Client;
 using MQTTnet.Formatter;
 using MQTTnet.Internal;
 using MQTTnet.Protocol;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Server
 {
@@ -49,7 +49,7 @@ namespace MQTTnet.Tests.Server
 
                     return CompletedTask.Instance;
                 };
-                
+
                 testEnvironment.Server.ClientConnectedAsync += args =>
                 {
                     serverConnectedClientId = args.ClientId;

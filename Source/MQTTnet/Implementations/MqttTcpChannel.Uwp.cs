@@ -3,9 +3,14 @@
 // See the LICENSE file in the project root for more information.
 
 #if WINDOWS_UWP
+using MQTTnet.Channel;
+using MQTTnet.Client;
+using MQTTnet.Server;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
@@ -13,11 +18,6 @@ using System.Threading.Tasks;
 using Windows.Networking;
 using Windows.Networking.Sockets;
 using Windows.Security.Cryptography.Certificates;
-using MQTTnet.Channel;
-using MQTTnet.Client;
-using MQTTnet.Server;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Net;
 
 namespace MQTTnet.Implementations
 {

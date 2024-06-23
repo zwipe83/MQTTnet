@@ -12,7 +12,7 @@ namespace MQTTnet.AspNetCore
 {
     public static class EndpointRouterExtensions
     {
-        public static void MapMqtt(this IEndpointRouteBuilder endpoints, string pattern) 
+        public static void MapMqtt(this IEndpointRouteBuilder endpoints, string pattern)
         {
             endpoints.MapConnectionHandler<MqttConnectionHandler>(pattern, options =>
             {

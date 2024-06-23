@@ -2,12 +2,12 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MQTTnet.Internal;
 using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MQTTnet.Internal;
 
 namespace MQTTnet.Tests.Internal
 {
@@ -65,15 +65,15 @@ namespace MQTTnet.Tests.Internal
                     {
                         await asyncSignal.WaitAsync(timeout.Token);
                     }
-                    
+
                     Assert.Fail("This must fail because the signal is not yet set.");
                 }
                 catch (OperationCanceledException)
                 {
                 }
-                
+
                 asyncSignal.Set();
-                
+
                 // WaitAsync should return directly because the signal is available.
                 await asyncSignal.WaitAsync();
             }
@@ -120,7 +120,7 @@ namespace MQTTnet.Tests.Internal
                 CancellationToken.None);
 
             await Task.Delay(1000);
-            
+
             // Now the current thread must fail because there is already a waiter.
             await asyncSignal.WaitAsync();
         }

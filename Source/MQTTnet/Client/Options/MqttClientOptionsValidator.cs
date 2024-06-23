@@ -2,10 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Linq;
 using MQTTnet.Formatter;
 using MQTTnet.Protocol;
+using System;
+using System.Linq;
 
 namespace MQTTnet.Client
 {
@@ -23,7 +23,7 @@ namespace MQTTnet.Client
                 // Everything is supported.
                 return;
             }
-            
+
             if (options.WillContentType?.Any() == true)
             {
                 Throw(nameof(options.WillContentType));
@@ -50,14 +50,14 @@ namespace MQTTnet.Client
             {
                 Throw(nameof(options.ReceiveMaximum));
             }
-            
+
             if (options.MaximumPacketSize > 0)
             {
                 Throw(nameof(options.MaximumPacketSize));
             }
 
             // Authentication relevant properties.
-            
+
             if (options.AuthenticationData?.Any() == true)
             {
                 Throw(nameof(options.AuthenticationData));
@@ -69,7 +69,7 @@ namespace MQTTnet.Client
             }
 
             // Will relevant properties.
-            
+
             if (options.WillPayloadFormatIndicator != MqttPayloadFormatIndicator.Unspecified)
             {
                 Throw(nameof(options.WillPayloadFormatIndicator));
@@ -84,22 +84,22 @@ namespace MQTTnet.Client
             {
                 Throw(nameof(options.WillCorrelationData));
             }
-            
+
             if (options.WillResponseTopic?.Any() == true)
             {
                 Throw(nameof(options.WillResponseTopic));
             }
-            
+
             if (options.WillDelayInterval > 0)
             {
                 Throw(nameof(options.WillDelayInterval));
             }
-            
+
             if (options.WillMessageExpiryInterval > 0)
             {
                 Throw(nameof(options.WillMessageExpiryInterval));
             }
-            
+
             if (options.WillUserProperties?.Any() == true)
             {
                 Throw(nameof(options.WillUserProperties));

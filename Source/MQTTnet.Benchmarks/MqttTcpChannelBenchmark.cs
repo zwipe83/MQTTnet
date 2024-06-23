@@ -2,16 +2,16 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
 using BenchmarkDotNet.Attributes;
-using MQTTnet.Channel;
-using MQTTnet.Implementations;
-using MQTTnet.Server;
-using System.Threading;
-using System.Threading.Tasks;
 using BenchmarkDotNet.Jobs;
+using MQTTnet.Channel;
 using MQTTnet.Client;
 using MQTTnet.Diagnostics;
+using MQTTnet.Implementations;
+using MQTTnet.Server;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Benchmarks
 {
@@ -41,7 +41,7 @@ namespace MQTTnet.Benchmarks
             var serverOptions = new MqttServerOptionsBuilder().Build();
             _mqttServer = factory.CreateMqttServer(serverOptions, new[] { tcpServer }, new MqttNetEventLogger());
 
-            
+
             _mqttServer.StartAsync().GetAwaiter().GetResult();
 
             var clientOptions = new MqttClientOptionsBuilder()
@@ -81,7 +81,7 @@ namespace MQTTnet.Benchmarks
             await Task.Yield();
 
             var buffer = new ArraySegment<byte>(new byte[size]);
-            
+
             for (var i = 0; i < iterations; i++)
             {
                 await _serverChannel.WriteAsync(buffer, true, CancellationToken.None).ConfigureAwait(false);

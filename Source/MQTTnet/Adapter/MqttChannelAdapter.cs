@@ -2,6 +2,12 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Channel;
+using MQTTnet.Diagnostics;
+using MQTTnet.Exceptions;
+using MQTTnet.Formatter;
+using MQTTnet.Internal;
+using MQTTnet.Packets;
 using System;
 using System.IO;
 using System.Net.Sockets;
@@ -9,12 +15,6 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
-using MQTTnet.Channel;
-using MQTTnet.Diagnostics;
-using MQTTnet.Exceptions;
-using MQTTnet.Formatter;
-using MQTTnet.Internal;
-using MQTTnet.Packets;
 
 namespace MQTTnet.Adapter
 {
@@ -223,9 +223,9 @@ namespace MQTTnet.Adapter
                     var localPacketInspector = PacketInspector;
                     if (localPacketInspector != null)
                     {
-                        await localPacketInspector.BeginSendPacket(packetBuffer).ConfigureAwait(false);    
+                        await localPacketInspector.BeginSendPacket(packetBuffer).ConfigureAwait(false);
                     }
-                    
+
                     _logger.Verbose("TX ({0} bytes) >>> {1}", packetBuffer.Length, packet);
 
                     if (packetBuffer.Payload.Count == 0 || !AllowPacketFragmentation)

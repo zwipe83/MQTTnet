@@ -2,10 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Http;
 
 namespace MQTTnet.AspNetCore
 {
@@ -23,7 +23,7 @@ namespace MQTTnet.AspNetCore
 
             return subProtocol;
         }
-        
+
         public static string SelectSubProtocol(IList<string> requestedSubProtocolValues)
         {
             if (requestedSubProtocolValues == null) throw new ArgumentNullException(nameof(requestedSubProtocolValues));

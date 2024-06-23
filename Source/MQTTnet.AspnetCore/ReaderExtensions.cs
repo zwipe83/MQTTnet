@@ -48,8 +48,8 @@ namespace MQTTnet.AspNetCore
             }
 
             var bodySlice = copy.Slice(0, bodyLength);
-            var bodySegment = GetArraySegment(ref bodySlice); 
-    
+            var bodySegment = GetArraySegment(ref bodySlice);
+
             var receivedMqttPacket = new ReceivedMqttPacket(fixedHeader, bodySegment, headerLength + bodyLength);
             if (formatter.ProtocolVersion == MqttProtocolVersion.Unknown)
             {

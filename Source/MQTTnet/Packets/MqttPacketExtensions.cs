@@ -18,84 +18,84 @@ namespace MQTTnet.Packets
             switch (packet)
             {
                 case MqttConnectPacket _:
-                {
-                    return "CONNECT";
-                }
+                    {
+                        return "CONNECT";
+                    }
 
                 case MqttConnAckPacket _:
-                {
-                    return "CONNACK";
-                }
+                    {
+                        return "CONNACK";
+                    }
 
                 case MqttAuthPacket _:
-                {
-                    return "AUTH";
-                }
+                    {
+                        return "AUTH";
+                    }
 
                 case MqttDisconnectPacket _:
-                {
-                    return "DISCONNECT";
-                }
+                    {
+                        return "DISCONNECT";
+                    }
 
                 case MqttPingReqPacket _:
-                {
-                    return "PINGREQ";
-                }
+                    {
+                        return "PINGREQ";
+                    }
 
                 case MqttPingRespPacket _:
-                {
-                    return "PINGRESP";
-                }
+                    {
+                        return "PINGRESP";
+                    }
 
                 case MqttSubscribePacket _:
-                {
-                    return "SUBSCRIBE";
-                }
+                    {
+                        return "SUBSCRIBE";
+                    }
 
                 case MqttSubAckPacket _:
-                {
-                    return "SUBACK";
-                }
+                    {
+                        return "SUBACK";
+                    }
 
                 case MqttUnsubscribePacket _:
-                {
-                    return "UNSUBSCRIBE";
-                }
+                    {
+                        return "UNSUBSCRIBE";
+                    }
 
                 case MqttUnsubAckPacket _:
-                {
-                    return "UNSUBACK";
-                }
+                    {
+                        return "UNSUBACK";
+                    }
 
                 case MqttPublishPacket _:
-                {
-                    return "PUBLISH";
-                }
+                    {
+                        return "PUBLISH";
+                    }
 
                 case MqttPubAckPacket _:
-                {
-                    return "PUBACK";
-                }
+                    {
+                        return "PUBACK";
+                    }
 
                 case MqttPubRelPacket _:
-                {
-                    return "PUBREL";
-                }
+                    {
+                        return "PUBREL";
+                    }
 
                 case MqttPubRecPacket _:
-                {
-                    return "PUBREC";
-                }
+                    {
+                        return "PUBREC";
+                    }
 
                 case MqttPubCompPacket _:
-                {
-                    return "PUBCOMP";
-                }
-                
+                    {
+                        return "PUBCOMP";
+                    }
+
                 default:
-                {
-                    return packet.GetType().Name;
-                }
+                    {
+                        return packet.GetType().Name;
+                    }
             }
         }
     }

@@ -2,13 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Client;
 using MQTTnet.Internal;
 using MQTTnet.Protocol;
 using MQTTnet.Server;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Server
 {
@@ -29,32 +29,32 @@ namespace MQTTnet.Tests.Server
 
                 await LongTestDelay();
                 await LongTestDelay();
-                
+
                 // Now inject messages which are appended to the queue of the client.
                 await server.InjectApplicationMessage("T", "0", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
-                
+
                 await server.InjectApplicationMessage("T", "2", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
                 await server.InjectApplicationMessage("T", "1", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
-                
+
                 await server.InjectApplicationMessage("T", "4", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
                 await server.InjectApplicationMessage("T", "3", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
-                
+
                 await server.InjectApplicationMessage("T", "6", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
                 await server.InjectApplicationMessage("T", "5", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
-                
+
                 await server.InjectApplicationMessage("T", "8", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
                 await server.InjectApplicationMessage("T", "7", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
-                
+
                 await server.InjectApplicationMessage("T", "9", qualityOfServiceLevel: MqttQualityOfServiceLevel.AtLeastOnce);
-                
+
                 await LongTestDelay();
-                
+
                 // Create a new client for the existing message.
                 var client = await testEnvironment.ConnectClient(o => o.WithClientId("A").WithCleanSession(false));
                 var messages = testEnvironment.CreateApplicationMessageHandler(client);
-                
+
                 await LongTestDelay();
-                
+
                 var payloadSequence = messages.GeneratePayloadSequence();
                 Assert.AreEqual("0214365879", payloadSequence);
 
@@ -63,12 +63,12 @@ namespace MQTTnet.Tests.Server
                 await LongTestDelay();
                 await client.ReconnectAsync();
                 await LongTestDelay();
-                
+
                 payloadSequence = messages.GeneratePayloadSequence();
                 Assert.AreEqual("0214365879", payloadSequence);
             }
         }
-        
+
         [TestMethod]
         public async Task Fire_Event_On_Client_Acknowledges_QoS_0()
         {

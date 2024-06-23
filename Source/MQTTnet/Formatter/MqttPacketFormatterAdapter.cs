@@ -2,13 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Runtime.CompilerServices;
 using MQTTnet.Adapter;
 using MQTTnet.Exceptions;
 using MQTTnet.Formatter.V3;
 using MQTTnet.Formatter.V5;
 using MQTTnet.Packets;
+using System;
+using System.Runtime.CompilerServices;
 
 namespace MQTTnet.Formatter
 {
@@ -64,18 +64,18 @@ namespace MQTTnet.Formatter
             switch (protocolVersion)
             {
                 case MqttProtocolVersion.V500:
-                {
-                    return new MqttV5PacketFormatter(bufferWriter);
-                }
+                    {
+                        return new MqttV5PacketFormatter(bufferWriter);
+                    }
                 case MqttProtocolVersion.V310:
                 case MqttProtocolVersion.V311:
-                {
-                    return new MqttV3PacketFormatter(bufferWriter, protocolVersion);
-                }
+                    {
+                        return new MqttV3PacketFormatter(bufferWriter, protocolVersion);
+                    }
                 default:
-                {
-                    throw new NotSupportedException();
-                }
+                    {
+                        throw new NotSupportedException();
+                    }
             }
         }
 

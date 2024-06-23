@@ -1,8 +1,8 @@
-using System;
-using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Exceptions;
 using MQTTnet.Formatter;
+using System;
+using System.Linq;
 
 namespace MQTTnet.Tests.Formatter
 {
@@ -48,13 +48,13 @@ namespace MQTTnet.Tests.Formatter
             Assert.AreEqual(1234U, reader.ReadVariableByteInteger());
             Assert.AreEqual(9876U, reader.ReadVariableByteInteger());
         }
-        
+
         [TestMethod]
         [ExpectedException(typeof(MqttProtocolViolationException))]
         public void Throw_If_String_Too_Long()
         {
             var writer = new MqttBufferWriter(4096, 65535);
-            
+
             writer.WriteString(string.Empty.PadLeft(65536));
         }
 

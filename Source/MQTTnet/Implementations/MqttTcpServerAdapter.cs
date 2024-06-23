@@ -2,23 +2,23 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 #if !WINDOWS_UWP
+using MQTTnet.Adapter;
+using MQTTnet.Diagnostics;
+using MQTTnet.Internal;
+using MQTTnet.Server;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using MQTTnet.Adapter;
-using MQTTnet.Diagnostics;
-using MQTTnet.Internal;
-using MQTTnet.Server;
 
 namespace MQTTnet.Implementations
 {
     public sealed class MqttTcpServerAdapter : IMqttServerAdapter
     {
         readonly List<MqttTcpServerListener> _listeners = new List<MqttTcpServerListener>();
-        
+
         CancellationTokenSource _cancellationTokenSource;
 
         MqttServerOptions _serverOptions;

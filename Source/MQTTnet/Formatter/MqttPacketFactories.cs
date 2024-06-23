@@ -7,7 +7,7 @@ namespace MQTTnet.Formatter
     public static class MqttPacketFactories
     {
         public static MqttConnAckPacketFactory ConnAck { get; } = new MqttConnAckPacketFactory();
-        
+
         public static MqttConnectPacketFactory Connect { get; } = new MqttConnectPacketFactory();
 
         public static MqttDisconnectPacketFactory Disconnect { get; } = new MqttDisconnectPacketFactory();

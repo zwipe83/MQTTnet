@@ -3,17 +3,17 @@
 // See the LICENSE file in the project root for more information.
 
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Jobs;
+using MQTTnet.Adapter;
+using MQTTnet.Channel;
+using MQTTnet.Diagnostics;
+using MQTTnet.Formatter;
+using MQTTnet.Formatter.V3;
 using MQTTnet.Packets;
 using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
-using MQTTnet.Adapter;
-using MQTTnet.Channel;
-using MQTTnet.Formatter;
-using MQTTnet.Formatter.V3;
-using BenchmarkDotNet.Jobs;
-using MQTTnet.Diagnostics;
 
 namespace MQTTnet.Benchmarks
 {

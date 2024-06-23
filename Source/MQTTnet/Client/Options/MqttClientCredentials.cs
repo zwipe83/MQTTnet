@@ -14,7 +14,7 @@ namespace MQTTnet.Client
             _userName = userName;
             _password = password;
         }
-        
+
         public string GetUserName(MqttClientOptions clientOptions)
         {
             return _userName;

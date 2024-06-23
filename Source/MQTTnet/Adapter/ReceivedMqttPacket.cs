@@ -9,7 +9,7 @@ namespace MQTTnet.Adapter
     public readonly struct ReceivedMqttPacket
     {
         public static readonly ReceivedMqttPacket Empty = new ReceivedMqttPacket();
-        
+
         public ReceivedMqttPacket(byte fixedHeader, ArraySegment<byte> body, int totalLength)
         {
             FixedHeader = fixedHeader;

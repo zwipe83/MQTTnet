@@ -2,15 +2,15 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Security.Authentication;
-using System.Threading;
-using System.Threading.Tasks;
 using MQTTnet.Client;
 using MQTTnet.Extensions.WebSocket4Net;
 using MQTTnet.Formatter;
 using MQTTnet.Internal;
 using MQTTnet.Protocol;
+using System;
+using System.Security.Authentication;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MQTTnet.TestApp
 {
@@ -54,7 +54,7 @@ namespace MQTTnet.TestApp
             await ExecuteTestsAsync("mqtt.eclipseprojects.io WS TLS13",
                 new MqttClientOptionsBuilder().WithWebSocketServer(o => o.WithUri("mqtt.eclipseprojects.io:443/mqtt"))
                     .WithProtocolVersion(MqttProtocolVersion.V311).WithTlsOptions(unsafeTls13).Build());
-            
+
             await ExecuteTestsAsync("mqtt.eclipseprojects.io WS TLS13 (WebSocket4Net)",
                 new MqttClientOptionsBuilder().WithWebSocketServer(o => o.WithUri("mqtt.eclipseprojects.io:443/mqtt"))
                     .WithProtocolVersion(MqttProtocolVersion.V311).WithTlsOptions(unsafeTls13).Build(),
@@ -168,7 +168,7 @@ namespace MQTTnet.TestApp
             options.ProtocolVersion = MqttProtocolVersion.V500;
             await ExecuteTestAsync(name + " V5.0.0", options, useWebSocket4Net);
         }
-        
+
         static async Task ExecuteTestAsync(string name, MqttClientOptions options, bool useWebSocket4Net = false)
         {
             try

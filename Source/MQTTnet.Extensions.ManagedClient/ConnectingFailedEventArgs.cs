@@ -1,5 +1,5 @@
-using System;
 using MQTTnet.Client;
+using System;
 
 namespace MQTTnet.Extensions.ManagedClient
 {

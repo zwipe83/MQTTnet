@@ -2,13 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MQTTnet.Client;
 using MQTTnet.Formatter;
 using MQTTnet.Internal;
 using MQTTnet.Protocol;
 using MQTTnet.Server;
+using System.Threading.Tasks;
 
 namespace MQTTnet.Tests.Server
 {
@@ -79,29 +79,29 @@ namespace MQTTnet.Tests.Server
             using (var testEnvironment = CreateTestEnvironment())
             {
                 var server = await testEnvironment.StartServer();
-                
+
                 var sender = await testEnvironment.ConnectClient();
-                
+
                 var receiver = await testEnvironment.ConnectClient();
                 await receiver.SubscribeAsync("A");
                 var receivedMessages = testEnvironment.CreateApplicationMessageHandler(receiver);
-                
+
                 await sender.PublishStringAsync("A", "Payload", MqttQualityOfServiceLevel.AtLeastOnce);
 
                 await LongTestDelay();
-                
+
                 receivedMessages.AssertReceivedCountEquals(1);
-                
+
                 server.InterceptingClientEnqueueAsync += e =>
                 {
                     e.AcceptEnqueue = false;
                     return CompletedTask.Instance;
                 };
-                
+
                 await sender.PublishStringAsync("A", "Payload", MqttQualityOfServiceLevel.AtLeastOnce);
 
                 await LongTestDelay();
-                
+
                 // Do not increase because the internal enqueue to the target client is not accepted!
                 receivedMessages.AssertReceivedCountEquals(1);
             }

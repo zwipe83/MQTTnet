@@ -3,15 +3,15 @@
 // See the LICENSE file in the project root for more information.
 
 #if WINDOWS_UWP
-using Windows.Networking.Sockets;
 using MQTTnet.Adapter;
+using MQTTnet.Diagnostics;
 using MQTTnet.Formatter;
+using MQTTnet.Server;
 using System;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using MQTTnet.Server;
-using MQTTnet.Diagnostics;
+using Windows.Networking.Sockets;
 
 namespace MQTTnet.Implementations
 {
@@ -19,7 +19,7 @@ namespace MQTTnet.Implementations
     {
         IMqttNetLogger _rootLogger;
         MqttNetSourceLogger _logger;
- 
+
         MqttServerOptions _options;
         StreamSocketListener _listener;
 

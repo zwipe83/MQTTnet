@@ -2,12 +2,26 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+
+/* Unmerged change from project 'MQTTnet.Benchmarks (net7.0)'
+Before:
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Loggers;
 using BenchmarkDotNet.Running;
+After:
+using BenchmarkDotNet.Loggers;
+using BenchmarkDotNet.Running;
 using MQTTnet.Diagnostics;
+using System;
+using System.Collections.Running;
+*/
+using BenchmarkDotNet.Running;
+using MQTTnet.Diagnostics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MQTTnet.Benchmarks
 {
@@ -71,7 +85,7 @@ namespace MQTTnet.Benchmarks
                 {
                     if (type != typeof(BaseBenchmark))
                     {
-                        benchmarks.Add(type);        
+                        benchmarks.Add(type);
                     }
                 }
             }
@@ -87,7 +101,7 @@ namespace MQTTnet.Benchmarks
             }
 
             // Allow for preselection to avoid developer frustration.
-            
+
             if (int.TryParse(arguments[0], out var benchmarkIndex))
             {
                 _selectedBenchmarkIndex = benchmarkIndex;

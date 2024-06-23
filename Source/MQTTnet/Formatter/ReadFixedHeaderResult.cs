@@ -10,14 +10,14 @@ namespace MQTTnet.Formatter
         {
             IsCanceled = true
         };
-        
+
         public static ReadFixedHeaderResult ConnectionClosed { get; } = new ReadFixedHeaderResult
         {
             IsConnectionClosed = true
         };
-        
+
         public bool IsCanceled { get; set; }
-        
+
         public bool IsConnectionClosed { get; set; }
 
         public MqttFixedHeader FixedHeader { get; set; }

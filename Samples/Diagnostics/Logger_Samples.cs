@@ -6,8 +6,8 @@
 // ReSharper disable UnusedMember.Global
 // ReSharper disable InconsistentNaming
 
-using System.Text;
 using MQTTnet.Diagnostics;
+using System.Text;
 
 namespace MQTTnet.Samples.Diagnostics;
 

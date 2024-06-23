@@ -2,9 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using MQTTnet.Packets;
 using System;
 using System.Collections.Generic;
-using MQTTnet.Packets;
 
 namespace MQTTnet.Client
 {
@@ -22,13 +22,13 @@ namespace MQTTnet.Client
         /// Gets the result for every topic filter item.
         /// </summary>
         public IReadOnlyCollection<MqttClientSubscribeResultItem> Items { get; }
-        
+
         /// <summary>
         /// Gets the user properties which were part of the SUBACK packet.
         /// <remarks>MQTT 5.0.0+ feature.</remarks>
         /// </summary>
         public IReadOnlyCollection<MqttUserProperty> UserProperties { get; }
-        
+
         /// <summary>
         /// Gets the reason string.
         /// <remarks>MQTT 5.0.0+ feature.</remarks>
